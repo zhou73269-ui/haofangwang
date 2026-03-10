@@ -50,7 +50,7 @@ public class UserController {
         if(result){
             return "redirect:/index?"+ResultMsg.successMsg("激活成功").asUrlParams();
         }else {
-            return "redirect:/accounts/register?"+ResultMsg.errorMsg("激活失败，轻确认连接是否过期");
+            return "redirect:/accounts/register?"+ResultMsg.errorMsg("激活失败，请确认链接是否过期").asUrlParams();
         }
     }
 

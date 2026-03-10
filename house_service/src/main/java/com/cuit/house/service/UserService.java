@@ -37,10 +37,12 @@ public class UserService {
      */
     public boolean addAcount(User account) {
         account.setPasswd(HashUtils.encryPassword(account.getPasswd()));
-        List<String> imgList = fileService.getImgPath(Lists.newArrayList(account.getAvatarFile()));
-        if(!imgList.isEmpty()){
-            //存入数据库中
-            account.setAvatar(imgList.get(0));
+        if(account.getAvatarFile() != null && !account.getAvatarFile().isEmpty()){
+            List<String> imgList = fileService.getImgPath(Lists.newArrayList(account.getAvatarFile()));
+            if(!imgList.isEmpty()){
+                //存入数据库中
+                account.setAvatar(imgList.get(0));
+            }
         }
         //把数据存入数据库中
         //设置初始值
