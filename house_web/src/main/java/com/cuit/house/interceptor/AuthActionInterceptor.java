@@ -21,6 +21,7 @@ public class AuthActionInterceptor implements HandlerInterceptor {
             String target =
                     URLEncoder.encode(request.getRequestURL().toString(), "utf-8");
             response.sendRedirect("/accounts/signin?errorMsg="+msg+"&target="+target);
+            return false;
         }
         return true;
     }
