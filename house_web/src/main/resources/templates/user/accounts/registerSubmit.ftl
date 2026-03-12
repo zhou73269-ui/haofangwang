@@ -28,7 +28,7 @@
                         <header><h1>注册成功</h1></header>
                         <section id="ceo-section" class="center">
                            
-                            <div class="cite no-bottom-margin">已经向邮箱${email}发送确认邮件，请及时激活，激活后方可开通账号
+                            <div class="cite no-bottom-margin">注册成功！您的账号已激活，可以直接<a href="/accounts/signin">登录</a>使用。
                             </div>
                         </section>
                     </section>

@@ -48,11 +48,11 @@ public class UserService {
         //设置初始值
         BeanHelper.setDefaultProp(account,User.class);
         BeanHelper.onInsert(account);
-        //用户设置非激活
-        account.setEnable(0);
+        //直接激活账号，跳过邮件验证
+        account.setEnable(1);
         userMapper.insert(account);
-        //邮件发送
-        mailService.registerNotify(account.getEmail());
+        //邮件发送（已注释，不再依赖邮件激活）
+        //mailService.registerNotify(account.getEmail());
         return true;
     }
 
